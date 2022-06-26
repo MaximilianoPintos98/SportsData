@@ -1,0 +1,2 @@
+Doc : https://www.api-football.com/documentation-v3#tag/Widgets/operation/get-widget-livescore
+Dashboard: https://dashboard.api-football.com/profile?access
