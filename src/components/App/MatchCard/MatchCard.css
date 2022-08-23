@@ -3,6 +3,12 @@
   max-height: 30px;
 }
 
+.logoLeague {
+  max-width: 40px;
+  max-height: 40px;
+  padding-right: 5px;
+}
+
 .spinnerCustom {
   width: 5px;
   height: 5px;
