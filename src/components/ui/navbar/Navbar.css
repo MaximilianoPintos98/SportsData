@@ -1,0 +1,8 @@
+.nav-custom {
+  border-bottom: 1px groove white;
+  background-color: black;
+}
+
+.card-custom {
+  cursor: pointer;
+}

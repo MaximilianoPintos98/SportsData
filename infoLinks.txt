@@ -1,2 +1,21 @@
 Doc : https://www.api-football.com/documentation-v3#tag/Widgets/operation/get-widget-livescore
 Dashboard: https://dashboard.api-football.com/profile?access
+
+
+  // useEffect(() => {
+  //   axios({
+  //       method: 'get',
+  //       baseURL: 'https://v3.football.api-sports.io',
+  //       url: '/fixtures/rounds',
+  //       params: {
+  //         season: '2022',
+  //         league: 61
+  //       },
+  //       headers: config.headers,
+  //     })
+  //     .then((response) => {
+  //       console.log(response)
+
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);

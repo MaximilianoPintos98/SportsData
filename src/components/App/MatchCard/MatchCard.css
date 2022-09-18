@@ -13,3 +13,25 @@
   width: 5px;
   height: 5px;
 }
+
+.card-custom-league {
+  background-color: black;
+  color: white;
+}
+
+.card-custom-match {
+  background-color: rgb(172, 172, 172);
+  color: black;
+}
+
+.circle {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
+  padding-left: 9px;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(59, 58, 58);
+}
