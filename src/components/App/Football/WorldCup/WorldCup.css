@@ -1,0 +1,55 @@
+.logoIco {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.tableLight {
+  background-color: rgb(195, 195, 195);
+}
+
+.logoIco {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.logoLeague {
+  max-width: 40px;
+  max-height: 40px;
+  padding-right: 5px;
+}
+
+.spinnerCustom {
+  width: 5px;
+  height: 5px;
+}
+
+.card-custom-match {
+  background-color: rgb(221, 221, 221);
+}
+
+.circle {
+  background-color: rgb(221, 221, 221);
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
+  padding-left: 9px;
+  align-items: center;
+  text-align: center;
+}
+
+.classification {
+  color: black;
+}
+
+.classification:hover {
+  color: rgb(100, 100, 100);
+}
+
+.border-custom{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 3px 8px;
+  border-radius: 10%;
+}

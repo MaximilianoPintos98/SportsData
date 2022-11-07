@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "Primera Division Argentina",
+    "url": "./../../../assets/img/ArgA.png"
+  },
+  {
+    "id": 1,
+    "name": "Premier League",
+    "url": "./../../../assets/img/Premier.png"
+  },
+  {
+    "id": 2,
+    "name": "La Liga - España",
+    "url": "./../../../assets/img/LaLiga.png"
+  },
+  {
+    "id": 3,
+    "name": "Ligue1 - Francia",
+    "url": "./../../../assets/img/Ligue1.png"
+  }
+]

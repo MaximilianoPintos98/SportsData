@@ -14,18 +14,13 @@
   height: 5px;
 }
 
-.card-custom-league {
-  background-color: black;
-  color: white;
-}
-
 .card-custom-match {
-  background-color: rgb(172, 172, 172);
-  color: black;
+  background-color: rgb(221, 221, 221);
 }
 
 .circle {
-  border: 1px solid white;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid black;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -33,5 +28,19 @@
   padding-left: 9px;
   align-items: center;
   text-align: center;
-  background-color: rgb(59, 58, 58);
+}
+
+.classification {
+  color: black;
+}
+
+.classification:hover {
+  color: rgb(100, 100, 100);
+}
+
+.border-custom{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 3px 8px;
+  border-radius: 10%;
 }
