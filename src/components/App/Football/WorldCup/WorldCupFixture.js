@@ -25,8 +25,8 @@ export const WorldCupFixture = () => {
       headers: config.headers,
     })
       .then((response) => {
-        setMatch(response.data.response);
-        setIsLoading(false);
+        if (!response.data.response === []) setMatch(response.data.response);
+        if (!response.data.response === []) setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -56,8 +56,8 @@ export const WorldCupFixture = () => {
     jsonData2.push([key, value]);
   }
   return isLoading ? (
-    <div class="spinner-border text-danger" role="status">
-      <span class="visually-hidden">Loading...</span>
+    <div className="spinner-border text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
     </div>
   ) : (
     <div className="card">
@@ -82,8 +82,8 @@ export const WorldCupFixture = () => {
                 var timeMatch = timeMatchSplited[0] + ":" + timeMatchSplited[1];
 
                 for (const [key, value] of Object.entries(CountryTraslation)) {
-                  if (d.teams.away.name == key) d.teams.away.name = value;
-                  if (d.teams.home.name == key) d.teams.home.name = value;
+                  if (d.teams.away.name === key) d.teams.away.name = value;
+                  if (d.teams.home.name === key) d.teams.home.name = value;
                 }
 
                 return (

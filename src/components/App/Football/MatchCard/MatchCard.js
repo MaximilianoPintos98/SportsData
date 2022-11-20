@@ -38,8 +38,7 @@ export const MatchCard = () => {
     return a.id - b.id;
   });
 
-  return (
-    <div className="container">
+  return <div className="container">
       {Leagues.map((l) => {
         return (
           <div className="card-custom-league pt-2 pb-2" key={l.id}>
@@ -179,11 +178,11 @@ export const MatchCard = () => {
                       </div>
                     );
                   }
+                  return console.log('ok')
                 })}
               </div>
             </div>
           );
         })}
     </div>
-  );
 };
