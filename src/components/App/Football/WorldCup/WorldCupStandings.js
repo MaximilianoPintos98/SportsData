@@ -23,15 +23,15 @@ export const WorldCupStandings = () => {
       headers: config.headers,
     })
       .then((response) => {
-        setStandingsAll(response.data.response[0].league.standings);
+        if (isLoading) setStandingsAll(response.data.response[0].league.standings);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  return isLoading ? (
-    <div class="spinner-border text-danger" role="status">
-      <span class="visually-hidden">Loading...</span>
+  return !isLoading ? (
+    <div className="spinner-border text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
     </div>
   ) : (
     standingsAll.map((standings, idx) => {
@@ -61,7 +61,7 @@ export const WorldCupStandings = () => {
                   for (const [key, value] of Object.entries(
                     CountryTraslation
                   )) {
-                    if (s.team.name == key) s.team.name = value;
+                    if (s.team.name === key) s.team.name = value;
                   }
                   return (
                     <tr key={s.rank}>
