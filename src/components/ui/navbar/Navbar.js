@@ -27,14 +27,14 @@ export const Navbar = () => {
               <li className="nav-item">
                 <a className="nav-link text-white" aria-current="page" href="/worldcup">Qatar2022</a>
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle text-white" href="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Deportes
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a className="dropdown-item" href="/Football">Futbol</a></li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

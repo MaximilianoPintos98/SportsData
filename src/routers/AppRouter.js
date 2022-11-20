@@ -16,7 +16,7 @@ export const AppRouter = () => {
       <Navbar />
       <div>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<WorldCup />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/football" element={<Football />} />
           <Route exact path="/partidos" element={<MatchCard />} />

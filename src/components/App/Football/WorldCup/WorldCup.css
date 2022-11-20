@@ -4,12 +4,7 @@
 }
 
 .tableLight {
-  background-color: rgb(195, 195, 195);
-}
-
-.logoIco {
-  max-width: 30px;
-  max-height: 30px;
+  background-color: rgb(209, 206, 206);
 }
 
 .logoLeague {
@@ -52,4 +47,24 @@
   padding: 10px;
   box-shadow: 3px 8px;
   border-radius: 10%;
+}
+
+.containerCustom {
+  width:50%;
+  margin:10px auto;
+}
+
+.containerCustom2 {
+  width:50%;
+  margin:10px auto;
+}
+
+.customText {
+  text-align: start !important;
+  padding-left: 10px;
+}
+
+.headerCustom {
+  font-size: 18px;
+  font-weight: 600;
 }

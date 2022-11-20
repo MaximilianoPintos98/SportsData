@@ -4,7 +4,7 @@ import "./Home.css";
 
 export const Home = () => {
   return (
-    <div className="container">
+    <div class="container text-center">
     </div>
   );
 };

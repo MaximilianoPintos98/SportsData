@@ -1,41 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import { WorldCupStandings } from './WorldCupStandings';
+import { WorldCupStandings } from "./WorldCupStandings";
+import { WorldCupFixture } from "./WorldCupFixture";
 
-import "./WorldCup.css"
-import { WorldCupFixture } from './WorldCupFixture';
+import "./WorldCup.css";
 
 export const WorldCup = () => {
-  // useEffect(() => {
-  //   axios({
-  //       method: 'get',
-  //       baseURL: 'https://v3.football.api-sports.io',
-  //       url: '/fixtures',
-  //       params: {
-  //         league: 1,
-  //         season: '2022'
-  //       },
-  //       headers: config.headers,
-  //     })
-  //     .then((response) => {
-  //       console.log(response.data.response)
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   return (
     <div>
-      <img src="../assets/img/banner/qatar222.png" className="w-100" alt="banner"/>
-      <div className="ps-5 pe-5 pt-3 text-center">
-        <div className="row gy-5">
-          <div className="col-5">
-            <WorldCupStandings/>
-          </div>
-          <div className="col-7 p-2">
-            <WorldCupFixture/>
-          </div>
+      <img
+        src="../assets/img/banner/banner.jpg"
+        className="w-100"
+        alt="banner"
+      />
+      <section className="d-flex">
+        <div className="containerCustom text-center p-3">
+          <WorldCupStandings />
         </div>
-      </div>
+        <div className="containerCustom2 text-center p-3">
+          <WorldCupFixture />
+        </div>
+      </section>
     </div>
-  )
-}
+  );
+};
