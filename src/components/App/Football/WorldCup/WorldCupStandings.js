@@ -23,13 +23,14 @@ export const WorldCupStandings = () => {
       headers: config.headers,
     })
       .then((response) => {
-        if (isLoading) setStandingsAll(response.data.response[0].league.standings);
+        setStandingsAll(response.data.response[0].league.standings);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  return !isLoading ? (
+  console.log(standingsAll)
+  return isLoading ? (
     <div className="spinner-border text-danger" role="status">
       <span className="visually-hidden">Loading...</span>
     </div>

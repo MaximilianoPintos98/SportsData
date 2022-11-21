@@ -25,8 +25,8 @@ export const WorldCupFixture = () => {
       headers: config.headers,
     })
       .then((response) => {
-        if (!response.data.response === []) setMatch(response.data.response);
-        if (!response.data.response === []) setIsLoading(false);
+        setMatch(response.data.response);
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
