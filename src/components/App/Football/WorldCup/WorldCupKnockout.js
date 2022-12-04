@@ -1,28 +1,37 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import { config } from "../../../../routers/AxiosConfig";
 
-import "./MatchCard.css";
+import "./WorldCup";
 
-export const MatchCard = () => {
+export const WorldCupKnockout = () => {
   
   const [Matchs, setMatch] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   
   var Leagues = [];
   var dateNow = new Date().toLocaleDateString();
-  var { league, leagueId } = useParams();
 
   useEffect(() => {
-    axios
-      .get(`https://v3.football.api-sports.io/fixtures?live=all`, config)
+    setIsLoading(true);
+    axios({
+      method: "get",
+      baseURL: "https://v3.football.api-sports.io",
+      url: "/fixtures",
+      params: {
+        league: 1,
+        season: "2022",
+        round: "Round of 16"
+      },
+      headers: config.headers,
+    })
       .then((response) => {
-        console.log(response.data.response)
         setMatch(response.data.response);
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
-
+  
   Matchs.forEach((e) => {
     Leagues.push(e.league);
   });
@@ -39,41 +48,24 @@ export const MatchCard = () => {
     return a.id - b.id;
   });
 
-  return <div className="container">
+  return isLoading ? (
+    <div className="spinner-border text-danger" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </div>
+  ) : (
+    <div className="container">
       {Leagues.map((l) => {
         return (
           <div className="card-custom-league pt-2 pb-2" key={l.id}>
-            <div className="d-flex border-custom pb-2">
-              <div className="circle">
-                <img
-                  src={
-                    l.name.includes("Primera Nacional") ? "../assets/img/logos/BNacional.png" :
-                    l.name.includes("Liga Profesional Argentina") ? "../assets/img/logos/ArgA.png" :
-                    l.logo
-                  }
-                  alt="LogoLiga"
-                  className="logoLeague"
-                />
-              </div>
-              <div className="card-body ">
-                <h5 className="card-title p-3">
-                  {l.name} | {l.country}
-                </h5>
-              </div>
-            </div>
             <div className="row d-flex justify-content-between">
               {
                 Matchs.map((m) => {
+                  console.log(m)
                   var dateMatch = new Date(m.fixture.timestamp * 1000).toLocaleDateString();
                   var timeMatchComplete = new Date(m.fixture.timestamp * 1000).toLocaleTimeString();
                   var timeMatchSplited = timeMatchComplete.split(":");
                   var timeMatch = timeMatchSplited[0] + ":" + timeMatchSplited[1];
 
-                  league = m.league.name;
-                  leagueId = m.league.id;
-
-                  var league2 = league.replace(/ /g, "-");
-                  
                   if (m.league.id === l.id) {
                     return (
                       <div
@@ -82,23 +74,17 @@ export const MatchCard = () => {
                       >
                         <div className="card-header">
                           <img
-                            src= {
-                              m.league.name.includes("Primera Nacional") ? "../assets/img/logos/BNacional.png" :
-                              m.league.name.includes("Liga Profesional Argentina") ? "../assets/img/logos/ArgA.png" :
-                              m.league.logo
-                            }
+                            src= { m.league.logo }
                             alt="LogoLiga"
                             className="logoLeague"
                           />
                           <span>
-                            { m.league.name} {m.league.name.includes(m.league.country) ? "" : m.league.country}{" "}-{" "}
-                            { m.league.round.includes("Regular Season") ? m.league.round.replace( "Regular Season -", "Temporada Regular / Fecha") : m.league.round.includes("2nd Phase") ?
-                              m.league.round.replace("2nd Phase", "2da Fase /").replace("-", "Fecha ")
-                            : m.league.round}
+                            { (m.league.name === 'World Cup') ? 'Mundial Qatar 2022' : m.league.name}{" "}-{" "}
+                            { (m.league.round === 'Round of 16') ? 'Octavos de Final' : (m.league.round === 'Quarter finals') ? 'Cuartos de Final' : m.league.round}
                           </span>
                         </div>
                         <div className="card-body d-flex">
-                          <div className="border-end border-dark col-8">
+                          <div className="border-end border-dark col-7 pt-4">
                             <div className="d-flex">
                               <div className="card-text col-11 p-2">
                                 <img
@@ -110,7 +96,7 @@ export const MatchCard = () => {
                               </div>
                               <div className="card-text p-2">
                                 <span>
-                                  {m.goals.home}
+                                  {(m.goals.home != null) ? m.goals.home : '-'}
                                 </span>
                               </div>
                             </div>
@@ -127,13 +113,13 @@ export const MatchCard = () => {
                               </div>
                               <div className="card-text p-2">
                                 <span>
-                                  {m.goals.away}
+                                  {(m.goals.away != null) ? m.goals.away : '-'}
                                 </span>
                               </div>
                             </div>
                           </div>
-                          <div className="col-4">
-                            <div className="text-center p-2">
+                          <div className="col-5"> 
+                            <div className="text-center fw-bold">
                               {dateMatch === dateNow ? "Hoy" : dateMatch}
                             </div>
                             <div className="text-center p-2 d-flex  justify-content-center">
@@ -166,24 +152,11 @@ export const MatchCard = () => {
                                 )
                               }
                             </div>
-                            <div className="text-center">
-                              {
-                                (leagueId === 1) 
-                                ? 
-                                <Link
-                                  to={"/worldcup"}
-                                  className="classification"
-                                >
-                                  Ir a Clasificación
-                                </Link> 
-                                : (leagueId === 97 || leagueId === 525) ? <div></div> :
-                                <Link
-                                  to={league2 + "/" + leagueId + "/posiciones"}
-                                  className="classification"
-                                >
-                                  Ir a Clasificación
-                                </Link>
-                              }
+                            <div className="text-center pt-2 fw-bold text-decoration-underline">
+                              Estadio
+                            </div>
+                            <div className="text-center pt-2">
+                              {m.fixture.venue.name}
                             </div>
                           </div>
                         </div>
@@ -196,4 +169,5 @@ export const MatchCard = () => {
           );
         })}
     </div>
+  )
 };

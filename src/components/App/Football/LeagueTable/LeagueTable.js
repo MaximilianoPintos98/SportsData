@@ -69,7 +69,6 @@ export const LeagueTable = () => {
           </thead>
           <tbody className="table-group-divider">
             {standings.map((s) => {
-              console.log(s)
               let arr  = []
               if (s.form != null) {
                 arr = s.form.split('')

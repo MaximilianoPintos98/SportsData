@@ -1,0 +1,158 @@
+ {
+  "fixture": {
+    "id": 964037,
+    "referee": null,
+    "timezone": "UTC",
+    "date": "2022-11-24T20:00:00+00:00",
+    "timestamp": 1669320000,
+    "periods": {
+      "first": 1669320000,
+      "second": 1669323600
+    },
+    "venue": {
+      "id": 1266,
+      "name": "Caixa Futebol Campus",
+      "city": "Seixal"
+    },
+    "status": {
+      "long": "Second Half",
+      "short": "2H",
+      "elapsed": 67
+    }
+  },
+  "league": {
+    "id": 525,
+    "name": "UEFA Champions League Women",
+    "country": "World",
+    "logo": "https://media.api-sports.io/football/leagues/525.png",
+    "flag": null,
+    "season": 2022,
+    "round": "Group Stage - 3"
+  },
+  "teams": {
+    "home": {
+      "id": 15495,
+      "name": "SL Benfica",
+      "logo": "https://media.api-sports.io/football/teams/15495.png",
+      "winner": true
+    },
+    "away": {
+      "id": 11075,
+      "name": "Rosengård W",
+      "logo": "https://media.api-sports.io/football/teams/11075.png",
+      "winner": false
+    }
+  },
+  "goals": {
+    "home": 1,
+    "away": 0
+  },
+  "score": {
+    "halftime": {
+      "home": 1,
+      "away": 0
+    },
+    "fulltime": {
+      "home": null,
+      "away": null
+    },
+    "extratime": {
+      "home": null,
+      "away": null
+    },
+    "penalty": {
+      "home": null,
+      "away": null
+    }
+  },
+  "events": [
+    {
+      "time": {
+        "elapsed": 23,
+        "extra": null
+      },
+      "team": {
+        "id": 15495,
+        "name": "SL Benfica",
+        "logo": "https://media.api-sports.io/football/teams/15495.png"
+      },
+      "player": {
+        "id": null,
+        "name": "C. Lacasse"
+      },
+      "assist": {
+        "id": null,
+        "name": null
+      },
+      "type": "Goal",
+      "detail": "Normal Goal",
+      "comments": null
+    },
+    {
+      "time": {
+        "elapsed": 26,
+        "extra": null
+      },
+      "team": {
+        "id": 11075,
+        "name": "Rosengård W",
+        "logo": "https://media.api-sports.io/football/teams/11075.png"
+      },
+      "player": {
+        "id": null,
+        "name": "H. Ayinde"
+      },
+      "assist": {
+        "id": null,
+        "name": null
+      },
+      "type": "Card",
+      "detail": "Yellow Card",
+      "comments": null
+    },
+    {
+      "time": {
+        "elapsed": 30,
+        "extra": null
+      },
+      "team": {
+        "id": 15495,
+        "name": "SL Benfica",
+        "logo": "https://media.api-sports.io/football/teams/15495.png"
+      },
+      "player": {
+        "id": null,
+        "name": "J. Silva"
+      },
+      "assist": {
+        "id": null,
+        "name": null
+      },
+      "type": "Card",
+      "detail": "Yellow Card",
+      "comments": null
+    },
+    {
+      "time": {
+        "elapsed": 54,
+        "extra": null
+      },
+      "team": {
+        "id": 11075,
+        "name": "Rosengård W",
+        "logo": "https://media.api-sports.io/football/teams/11075.png"
+      },
+      "player": {
+        "id": null,
+        "name": "F. Brown"
+      },
+      "assist": {
+        "id": null,
+        "name": "B. Schmidt"
+      },
+      "type": "subst",
+      "detail": "Substitution 1",
+      "comments": null
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import { LeagueTable } from '../components/App/Football/LeagueTable/LeagueTable'
 import { WorldCup } from '../components/App/Football/WorldCup/WorldCup'
 import { Football } from '../components/App/Football/FootballForFlags/Football'
 import { MatchCard } from '../components/App/Football/MatchCard/MatchCard'
+import { StatisticsMatchs } from '../components/App/Football/StatisticsMatchs/StatisticsMatchs'
 
 
 export const AppRouter = () => {
@@ -22,6 +23,7 @@ export const AppRouter = () => {
           <Route exact path="/partidos" element={<MatchCard />} />
           <Route exact path="/partidos/:league/:leagueId/posiciones" element={<LeagueTable />} />
           <Route exact path="/worldcup" element={<WorldCup />} />
+          <Route exact path="/statistics" element={<StatisticsMatchs />} />
 
           <Route path="*" element={ <ErrorPage /> }/>
         </Routes>
