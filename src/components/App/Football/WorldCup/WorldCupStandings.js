@@ -29,7 +29,6 @@ export const WorldCupStandings = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(standingsAll)
   return isLoading ? (
     <div className="spinner-border text-danger" role="status">
       <span className="visually-hidden">Loading...</span>
@@ -59,11 +58,10 @@ export const WorldCupStandings = () => {
               </thead>
               <tbody className="table-group-divider">
                 {standings.map((s) => {
-                  for (const [key, value] of Object.entries(
-                    CountryTraslation
-                  )) {
+                  for (const [key, value] of Object.entries(CountryTraslation)) {
                     if (s.team.name === key) s.team.name = value;
                   }
+
                   return (
                     <tr key={s.rank}>
                       <th>{s.rank}</th>
